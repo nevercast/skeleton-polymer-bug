@@ -22,7 +22,7 @@ System.config({
     "aurelia-html-import-template-loader": "npm:aurelia-html-import-template-loader@1.0.0-beta.1.0.1",
     "aurelia-loader-default": "npm:aurelia-loader-default@1.0.0-beta.1.0.2",
     "aurelia-logging-console": "npm:aurelia-logging-console@1.0.0-beta.1",
-    "aurelia-polymer": "github:roguePanda/aurelia-polymer@0.2.1",
+    "aurelia-polymer": "github:roguePanda/aurelia-polymer@1.0.0-beta.1.0.1",
     "aurelia-router": "npm:aurelia-router@1.0.0-beta.1.0.1",
     "aurelia-templating-binding": "npm:aurelia-templating-binding@1.0.0-beta.1.0.2",
     "aurelia-templating-resources": "npm:aurelia-templating-resources@1.0.0-beta.1.0.4",
@@ -45,6 +45,11 @@ System.config({
     },
     "github:jspm/nodelibs-util@0.1.0": {
       "util": "npm:util@0.10.3"
+    },
+    "github:roguePanda/aurelia-polymer@1.0.0-beta.1.0.1": {
+      "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.0.8",
+      "aurelia-logging": "npm:aurelia-logging@1.0.0-beta.1",
+      "aurelia-templating-binding": "npm:aurelia-templating-binding@1.0.0-beta.1.0.2"
     },
     "github:twbs/bootstrap@3.3.6": {
       "jquery": "github:components/jquery@2.2.0"
