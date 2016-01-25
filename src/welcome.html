@@ -1,11 +1,30 @@
+<!-- Optionally could add a bower: path to config.js -->
+<link rel="import" href="../bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="../bower_components/paper-item/paper-icon-item.html">
+<!-- Icons -->
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<!-- We are also using social icons -->
+<link rel="import" href="../bower_components/iron-icons/social-icons.html">
 <template>
   <section class="au-animate">
-    <h2>${heading}</h2>
+    <h2>Binding example</h2>
     <paper-menu>
-      <paper-icon-item repeat.for="nav of router.navigation">
+      <paper-icon-item id.bind="nav.id" repeat.for="nav of exampleLinks">
         <iron-icon icon.bind="nav.settings.icon" item-icon></iron-icon>
         ${nav.title}
       </paper-icon-item>
     </paper-menu>
+    <h2>Proof</h2>
+    <paper-menu>
+      <paper-icon-item id="proof-1">
+        <iron-icon icon="home" item-icon></iron-icon>
+        Home
+      </paper-icon-item>
+      <paper-icon-item id="proof-2">
+        <iron-icon icon="social:person-add" item-icon></iron-icon>
+        Add User
+      </paper-icon-item>
+    </paper-menu>
+    <h2>Debug information has been printed to the console</h2>
   </section>
 </template>

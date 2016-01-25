@@ -1,34 +1,59 @@
 //import {computedFrom} from 'aurelia-framework';
 
 export class Welcome {
-  heading = 'Welcome to the Aurelia Navigation App!';
-  firstName = 'John';
-  lastName = 'Doe';
-  previousValue = this.fullName;
+  tabs = ""
 
-  //Getters can't be directly observed, so they must be dirty checked.
-  //However, if you tell Aurelia the dependencies, it no longer needs to dirty check the property.
-  //To optimize by declaring the properties that this getter is computed from, uncomment the line below
-  //as well as the corresponding import above.
-  //@computedFrom('firstName', 'lastName')
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-  }
-
-  submit() {
-    this.previousValue = this.fullName;
-    alert(`Welcome, ${this.fullName}!`);
-  }
-
-  canDeactivate() {
-    if (this.fullName !== this.previousValue) {
-      return confirm('Are you sure you want to leave?');
+  // Simulate router configuration
+  exampleLinks = [
+    {
+      title: 'Home',
+      settings: {
+        icon: 'home'
+      },
+      id: 'binding-1'
+    },
+    {
+      title: 'Add User',
+      settings: {
+        icon: 'social:person-add'
+      },
+      id: 'binding-2'
     }
-  }
-}
+  ]
 
-export class UpperValueConverter {
-  toView(value) {
-    return value && value.toUpperCase();
+  log() {
+    let args = Array.from(arguments);
+    args.unshift(this.tabs);
+    console.log.apply(console, args);
+  }
+
+  tabIn() {
+    this.tabs += '\t';
+  }
+
+  tabOut() {
+    if(this.tabs.length == 1) this.tabs = '';
+    else tabs = this.tabs.substring(0, this.tabs.length-1);
+  }
+
+  describe(paperItemID, title) {
+    var icon = $('#' + paperItemID + ' iron-icon');
+    if(icon && icon[0]) icon = icon[0];
+    this.log(title)
+    this.tabIn()
+    this.log('Property definition on Element')
+    this.log(Object.getOwnPropertyDescriptor(icon, 'icon'))
+    this.log('Property definition on Prototype')
+    this.log(Object.getOwnPropertyDescriptor(icon.__proto__, 'icon'))
+    this.log('Icon property value:', icon.icon)
+    this.tabOut();
+  }
+
+  attached() {
+    this.log('Debug information follows!!');
+    this.describe('binding-1', 'Binding: Home')
+    this.describe('binding-2', 'Binding: Add')
+    this.describe('proof-1', 'Proof: Home')
+    this.describe('proof-1', 'Proof: Add')
   }
 }
