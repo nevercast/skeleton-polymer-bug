@@ -1,0 +1,20 @@
+<template>
+  <h2>Binding example</h2>
+  <paper-menu>
+    <paper-icon-item id.bind="nav.id" repeat.for="nav of exampleLinks">
+      <iron-icon icon.bind="nav.settings.icon" item-icon></iron-icon>
+      ${nav.title}
+    </paper-icon-item>
+  </paper-menu>
+  <h2>Proof</h2>
+  <paper-menu>
+    <paper-icon-item id="proof-1">
+      <iron-icon icon="home" item-icon></iron-icon>
+      Home
+    </paper-icon-item>
+    <paper-icon-item id="proof-2">
+      <iron-icon icon="social:person-add" item-icon></iron-icon>
+      Add User
+    </paper-icon-item>
+  </paper-menu>
+</template>
